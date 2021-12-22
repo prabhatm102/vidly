@@ -1,0 +1,17 @@
+include layouts/header.pug
+    .container 
+        .row 
+            .col-md-4
+            form(action="javascript:addCustomer()")
+                div
+                div
+                    label Name
+                    input(type="text" class="form-control" id="c_name" minlength="3" required="true")
+                div
+                    label.form-check-label Phone
+                    input(type="number" class="form-control" id="c_phone" min="1000000000" max="9999999999" required="true")
+                div(class="form-check")
+                    label isGold
+                    input(type="checkbox" class="form-check-input" id="c_isGold")
+                button(type="submit" class="btn btn-primary") Add Customer
+include layouts/footer.pug

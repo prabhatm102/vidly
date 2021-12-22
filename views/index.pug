@@ -1,0 +1,25 @@
+include layouts/header.pug 
+h1(style={color:'red'}) #{test}  
+.container
+    .row 
+        .col-md-4
+            table(border=2,class="table")
+                tr.table-dark.text-center   
+                    th S.No.
+                    th Name 
+                    th Phone
+                    th Gold Subscription 
+                    th Action || 
+                        a(href='addCustomer') Add Customers
+                            - var sn=1
+                for c in customers  
+                    tr.text-center 
+                        td=sn++
+                        td=c.name
+                        td=c.phone
+                        td=c.isGold?'Yes':'No'
+                        td
+                           a(href='api/genres/'+c._id) Edit | 
+                           a(href='api/genres/'+c._id) Delete |  
+                           a(href='api/genres/'+c._id) Details 
+include layouts/footer.pug      
